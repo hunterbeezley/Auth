@@ -1,0 +1,24 @@
+ <h1 class="display-2">Sign in</h1>
+ 
+  <%= form_with url: sign_in_path do |f| %>
+    <p>
+    <%= f.label 'email:'%><br>
+    <%= f.text_field :email, id: 'email' %>
+    </p>
+    <p>
+    <%= f.label 'password:'%><br>
+    <%= f.password_field :password, id: 'password' %><br>
+    <p>
+      <%= f.check_box :remember_me,
+        class: "form-check-input" %>
+        <%= f.label :remember_me %>
+    <p>
+    <%= link_to 'Forgot your password?', password_reset_path %>
+    </p>
+    <p>
+    <%= f.submit 'Log In' %>
+    </p>
+
+    <%= link_to "Back", :back %>
+
+  <% end %>
